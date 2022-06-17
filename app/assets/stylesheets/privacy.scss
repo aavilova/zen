@@ -1,0 +1,74 @@
+// Place all the styles related to the Privacy_user controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+$H2: 4.673vw;
+$descr: 2.804vw;
+$in: #2C2C2C;
+$yan: #fff;
+$transmission: #898989;
+$fieldwidth: 80.374vw;
+$fieldheight: 11.215vw;
+$fieldfontsize: 3.738vw;
+$zen: #33FF00;
+
+.privacy{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  .content{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    .logo{
+      margin-bottom: 5.841vw;
+      img{
+        width: 23.364vw;
+        height: 23.364vw;
+      }
+    }
+    h2{
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: $H2;
+      line-height: 130%;
+      color: $in;
+      margin: 0 0 3.505vw 0;
+    }
+    p{
+      margin: 0;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      font-size: $descr;
+      line-height: 150%;
+      width: 72.430vw;
+      color: $transmission;
+      margin-bottom: 8.178vw;
+    }
+  }
+  button{
+    cursor: pointer;
+    font-weight: 600;
+    font-size: $fieldfontsize;
+    color: $in;
+    width: $fieldwidth;
+    height: $fieldheight;
+    background: #FFFFFF;
+    border: 1px solid #2C2C2C;
+    border-radius: 8.411vw;
+    position: absolute;
+    bottom: 13.084vw;
+    left: 10.5vw;
+    animation-fill-mode: forwards;
+    font-family: 'Inter', sans-serif;
+    padding: auto;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,224 @@
+<section class="onboarding_patient">
+  <div class="questions">
+    <div class="part_2">
+      <div class="scnd">
+        <h2>2/5</h2>
+        <h2>Как zen может тебе помочь?</h2>
+      </div>
+      <p>Ты можешь выбрать один или несколько вариантов, или же выбрать просто новый опыт</p>
+      <div class="checkboxes">
+        <div class="check_box">
+          <p>Прогнозировать смены настроения</p>
+        </div>
+        <div class="check_box">
+          <p>Узнать, как жить с расстройством</p>
+        </div>
+        <div class="check_box">
+          <p>Распознать ментальное расстройство</p>
+        </div>
+        <div class="check_box">
+          <p>Объяснить свое состояние близким</p>
+        </div>
+        <div class="check_box">
+          <p>Обсудить свое самочуствие с другими</p>
+        </div>
+        <div class="check_box">
+          <p>Исследовать себя</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="part_3 hide">
+      <div class="thrd">
+        <h2>3/5</h2>
+        <h2>Как твое ментальное здоровье?</h2>
+      </div>
+      <p>Возможно, у тебя уже есть диагноз или ты находишься в ремиссии, а может ты просто подозреваешь что-то неладное</p>
+      <div class="checkboxes">
+        <div class="check_box">
+          <p>У меня есть диагноз (один или больше)</p>
+        </div>
+        <div class="check_box">
+          <p>Сейчас я в ремиссии</p>
+        </div>
+        <div class="check_box">
+          <p>Я подозреваю о расстройстве</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="part_4 hide">
+      <div class="frth">
+        <h2>4/5</h2>
+        <h2>Давай отметим, что ты чувствуешь сейчас?</h2>
+      </div>
+      <p>Отметь на шкале ниже свое самочуствие; тебе грустно или весело? Испытваешь ли ты тревогу или может чувствуешь физический дискомфорт? Удалось ли тебе выспаться? </p>
+      <div class="values">
+        <div class="value">
+          <p>Настроение</p>
+          <div class="scale">
+            <div class="draggable"></div>
+          </div>
+        </div>
+        <div class="value">
+          <p>тревожность</p>
+          <div class="scale">
+            <div class="draggable"></div>
+          </div>
+        </div>
+        <div class="value">
+          <p>сон</p>
+          <div class="scale">
+            <div class="draggable"></div>
+          </div>
+        </div>
+        <div class="value">
+          <p>физическое состояние</p>
+          <div class="scale">
+            <div class="draggable"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="part_5 hide">
+      <div class="ffth">
+        <h2>5/5</h2>
+        <h2>Уделяй zen несколько минут в день, чтобы быть в контакте с собой</h2>
+      </div>
+      <p>Давай настроим уведомления, чтобы ты не забывал заботиться о себе несколько раз в день</p>
+      <div class="notifications">
+        <div class="nots">
+          <p>доброе утро!</p>
+          <div class="scale">
+            <div class="time">
+              10:00
+            </div>
+            <div class="switch">
+              <div class="point"></div>
+            </div>
+          </div>
+        </div>
+        <div class="nots">
+          <p>КАк твой день?</p>
+          <div class="scale">
+            <div class="time">
+              15:00
+            </div>
+            <div class="switch">
+              <div class="point"></div>
+            </div>
+          </div>
+        </div>
+        <div class="nots">
+          <p>Готов ко сну?</p>
+          <div class="scale">
+            <div class="time">
+              21:00
+            </div>
+            <div class="switch">
+              <div class="point"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="buttons">
+    <button id="go_next" class="g"  type="button" name="button"></button>
+    <button id="skip" class="skip" type="button" name="button"></button>
+
+    <%= link_to "", privacy_user_path, :class => "link_p" %>
+  </div>
+</section>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(".check_box").click(function(){
+      $(this).toggleClass("selected");
+    });
+
+    $("#go_next").click(function(){
+      $(this).addClass("go");
+      $("#skip").addClass("skipit");
+      $(".part_2").addClass("hide");
+      $(".part_3").removeClass("hide");
+
+      $(".go").click(function(){
+        $(this).addClass("go_on");
+        $("#skip").addClass("skipitnext");
+        $(".part_3").addClass("hide");
+        $(".part_4").removeClass("hide");
+
+        $(".go_on").click(function(){
+          $(this).addClass("go_final");
+          $(".skipitnext").addClass("skip_final");
+          $(".part_4").addClass("hide");
+          $(".part_5").removeClass("hide");
+
+          $(".go_final").click(function(){
+            $(".link_p").get(0).click();
+          });
+        })
+      });
+    });
+
+    $("#skip").click(function(){
+      $(this).addClass("skipit");
+      $("#go_next").addClass("go");
+      $(".part_2").addClass("hide");
+      $(".part_3").removeClass("hide");
+
+      $(".skipit").click(function(){
+        $(this).addClass("skipitnext");
+        $("#go").addClass("go_on");
+        $(".part_3").addClass("hide");
+        $(".part_4").removeClass("hide");
+
+        $(".skipitnext").click(function(){
+          $(this).addClass("skip_final");
+          $(".go_on").addClass("go_final");
+          $(".part_3").addClass("hide");
+          $(".part_4").addClass("hide");
+          $(".part_5").removeClass("hide");
+
+          $(".skip_final").click(function(){
+            $(".link_p").get(0).click();
+          });
+        })
+      });
+    });
+
+    $(".switch").click(function(){
+      $(this).toggleClass("on");
+    })
+
+// draggable function
+    function handle_mousedown(e){
+
+        window.my_dragging = {};
+        my_dragging.pageX0 = e.pageX;
+        my_dragging.elem = this;
+        my_dragging.offset0 = $(this).offset();
+
+        function handle_dragging(e){
+            let left = my_dragging.offset0.left + (e.pageX - my_dragging.pageX0);
+            let right = my_dragging.offset0.right + (e.pageX - my_dragging.pageX0);
+            $(my_dragging.elem)
+            .offset({right: right, left: left});
+        }
+
+        function handle_mouseup(e){
+            $('body')
+            .off('mousemove', handle_dragging)
+            .off('mouseup', handle_mouseup);
+        }
+
+        $('body')
+        .on('mouseup', handle_mouseup)
+        .on('mousemove', handle_dragging);
+    }
+
+    $('.draggable').mousedown(handle_mousedown);
+  });
+</script>

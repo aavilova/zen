@@ -1,0 +1,333 @@
+// Place all the styles related to the Patient controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+$H2: 4.673vw;
+$descr: 2.804vw;
+$in: #2C2C2C;
+$yan: #fff;
+$transmission: #898989;
+$fieldwidth: 80.374vw;
+$fieldheight: 11.215vw;
+$fieldfontsize: 3.738vw;
+$zen: #33FF00;
+
+.onboarding_patient{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  .questions{
+    width: 80.374vw;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 10.514vw;
+    left: 10.5vw;
+    .part_2{
+      .scnd{
+        display: flex;
+        h2{
+          font-family: 'Inter', sans-serif;
+          font-weight: 600;
+          font-size: $H2;
+          line-height: 130%;
+          color: $in;
+          margin-right: 2.570vw;
+          margin-bottom: 3.505vw;
+        }
+      }
+      p{
+        margin-top: 0;
+        margin-left: 9.579vw;
+        font-family: 'Inter', sans-serif;
+        font-size: $descr;
+        line-height: 150%;
+        width: 65.421vw;
+        color: $transmission;
+        margin-bottom: 8.178vw;
+      }
+      .checkboxes{
+        .check_box{
+          width: $fieldwidth;
+          height: $fieldheight;
+          background: {
+            image: url("checkfield.svg");
+          }
+          background-size: 100%;
+          background-position: center;
+          margin-bottom: 2.336vw;
+          p{
+            padding: 3.3vw 5vw;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 130%;
+            color: $in;
+          }
+        }
+        .selected{
+          background: {
+            image: url("checkfield_selected.svg");
+          }
+          background-size: 100%;
+          background-position: center;
+          p{
+            color: $yan;
+          }
+        }
+      }
+    }
+    .part_3{
+      .thrd{
+        display: flex;
+        h2{
+          font-family: 'Inter', sans-serif;
+          font-weight: 600;
+          font-size: $H2;
+          line-height: 130%;
+          color: $in;
+          margin-right: 2.570vw;
+          margin-bottom: 3.505vw;
+        }
+      }
+      p{
+        margin-top: 0;
+        margin-left: 9.579vw;
+        font-family: 'Inter', sans-serif;
+        font-size: $descr;
+        line-height: 150%;
+        width: 65.421vw;
+        color: $transmission;
+        margin-bottom: 8.178vw;
+      }
+      .checkboxes{
+        .check_box{
+          width: $fieldwidth;
+          height: $fieldheight;
+          background: {
+            image: url("checkfield.svg");
+          }
+          background-size: 100%;
+          background-position: center;
+          margin-bottom: 2.336vw;
+          p{
+            padding: 3.3vw 5vw;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 130%;
+            color: $in;
+          }
+        }
+        .selected{
+          background: {
+            image: url("checkfield_selected.svg");
+          }
+          background-size: 100%;
+          background-position: center;
+          p{
+            color: $yan;
+          }
+        }
+      }
+    }
+    .part_4{
+      .frth{
+        display: flex;
+        h2{
+          font-family: 'Inter', sans-serif;
+          font-weight: 600;
+          font-size: $H2;
+          line-height: 130%;
+          color: $in;
+          margin-right: 2.570vw;
+          margin-bottom: 3.505vw;
+        }
+      }
+      p{
+        margin-top: 0;
+        margin-left: 9.579vw;
+        font-family: 'Inter', sans-serif;
+        font-size: $descr;
+        line-height: 150%;
+        width: 65.421vw;
+        color: $transmission;
+        margin-bottom: 8.178vw;
+      }
+      .values{
+        .value{
+          margin-bottom: 5.841vw;
+          p{
+            font-family: 'Inter', sans-serif;
+            margin-left: 4.673vw;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 150%;
+            text-transform: uppercase;
+            color: $transmission;
+            margin-bottom: 2vw;
+          }
+          .scale{
+            background: {
+              image: url("value.svg");
+            }
+            background-position: center;
+            background-size: 100%;
+            width: $fieldwidth;
+            height: 9.7vw;
+            display: flex;
+            align-items: center;
+            .draggable{
+              left: auto;
+              right: auto;
+              margin-left: 45%;
+              height: 8.4vw;
+              width: 8.4vw;
+              background: $yan;
+              border: 1px solid #000;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+    }
+    .part_5{
+      .ffth{
+        display: flex;
+        h2{
+          font-family: 'Inter', sans-serif;
+          font-weight: 600;
+          font-size: $H2;
+          line-height: 130%;
+          color: $in;
+          margin-right: 2.570vw;
+          margin-bottom: 3.505vw;
+        }
+      }
+      p{
+        margin-top: 0;
+        margin-left: 9.579vw;
+        font-family: 'Inter', sans-serif;
+        font-size: $descr;
+        line-height: 150%;
+        width: 65.421vw;
+        color: $transmission;
+        margin-bottom: 8.178vw;
+      }
+      .notifications{
+        .nots{
+          margin-bottom: 5.841vw;
+          p{
+            font-family: 'Inter', sans-serif;
+            margin-left: 4.673vw;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 150%;
+            text-transform: uppercase;
+            color: $transmission;
+            margin-bottom: 2vw;
+          }
+          .scale{
+            background: $yan;
+            width: $fieldwidth;
+            height: $fieldheight;
+            display: flex;
+            border: 1px solid #2C2C2C;
+            border-radius: 8.411vw;
+            justify-content: space-between;
+            .time{
+              font-family: 'Inter', sans-serif;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 18px;
+              line-height: 23px;
+              color: $in;
+              padding: 2.804vw 3.972vw;
+            }
+            .switch{
+              margin: 1.6vw 2vw;
+              width: 12.850vw;
+              height: 7.944vw;
+              border-radius: 8.411vw;
+              background: $transmission;
+              .point{
+                margin: .75vw .8vw;
+                width: 6.542vw;
+                height: 6.542vw;
+                background: $yan;
+                border-radius: 8.411vw;
+                transition: .5s;
+              }
+            }
+            .on{
+              background: $zen;
+              .point{
+                margin-left: 43%;
+                transition: .3s;
+              }
+            }
+          }
+        }
+      }
+    }
+    .hide{
+      display: none;
+    }
+  }
+  .buttons{
+    position: absolute;
+    bottom: 13.084vw;
+    left: 10.5vw;
+    display: flex;
+    flex-direction: column;
+    #go_next{
+      cursor: pointer;
+      font-weight: 600;
+      font-size: $fieldfontsize;
+      color: $in;
+      width: $fieldwidth;
+      height: $fieldheight;
+      background: #FFFFFF;
+      border: 1px solid #2C2C2C;
+      border-radius: 8.411vw;
+      margin-bottom: 4.673vw;
+    }
+    #go_next:after{
+      content: "Дальше";
+    }
+    #skip{
+      width: $fieldwidth;
+      font-family: 'Inter', sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 19px;
+      align-items: center;
+      text-align: center;
+      letter-spacing: -0.28px;
+      color: rgba(133, 134, 136, 0.8);
+      border: none;
+      background: none;
+      text-align: center;
+    }
+    .skip:after{
+      content: "Просто попробовать что-то новое";
+    }
+    .go{
+      position: relative;
+    }
+    .skipit:after{
+      content: "Пока что мне сложно объяснить";
+    }
+    .skipitnext:after{
+      content: "Я не могу разобраться в своих чувствах";
+    }
+    .skip_final:after{
+      content: "Я пока  что не готов ";
+    }
+  }
+}

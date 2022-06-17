@@ -1,0 +1,195 @@
+<section class="onboarding_relative">
+  <div class="questions">
+    <div class="part_2">
+      <div class="scnd">
+        <h2>2/5</h2>
+        <h2>Как zen может тебе помочь?</h2>
+      </div>
+      <p>Ты можешь выбрать один или несколько вариантов, или же выбрать просто новый опыт</p>
+      <div class="checkboxes">
+        <div class="check_box">
+          <p>Понять состояние близкиого человека </p>
+        </div>
+        <div class="check_box">
+          <p>Узнать, как жить с расстройством</p>
+        </div>
+        <div class="check_box">
+          <p>Распознать ментальное расстройство</p>
+        </div>
+        <div class="check_box">
+          <p>Прогнозировать настроение близкого</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="part_3 hide">
+      <div class="thrd">
+        <h2>3/5</h2>
+        <h2>Каково ментальное здоровье твоего близкого?</h2>
+      </div>
+      <p>Возможно, у него уже есть диагноз или он находишься в ремиссии, а может ты просто подозреваешь, что с ним что-то неладно</p>
+      <div class="checkboxes">
+        <div class="check_box">
+          <p>У него есть диагноз (один или больше)</p>
+        </div>
+        <div class="check_box">
+          <p>Сейчас он в ремиссии</p>
+        </div>
+        <div class="check_box">
+          <p>Я подозреваю о его расстройстве</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="part_4 hide">
+      <div class="frth">
+        <h2>4/5</h2>
+        <h2>Может, твой близкий уже использует zen?</h2>
+      </div>
+      <p>Ты можешь ввести ключ идентификации для отслеживания его состояния (он есть в настройках профиля твоего близкого человека)</p>
+      <div class="enter">
+         <%= text_area_tag 'key', nil, class: 'key' %>
+      </div>
+    </div>
+
+    <div class="part_5 hide">
+      <div class="ffth">
+        <h2>5/5</h2>
+        <h2>Уделяй zen несколько минут в день, чтобы быть в контакте со своим близким</h2>
+      </div>
+      <p>Давай настроим уведомления, чтобы ты не забыл быть внимательнее к чувствам своего близкого человека</p>
+      <div class="notifications">
+        <div class="nots">
+          <p>доброе утро!</p>
+          <div class="scale">
+            <div class="time">
+              10:00
+            </div>
+            <div class="switch">
+              <div class="point"></div>
+            </div>
+          </div>
+        </div>
+        <div class="nots">
+          <p>КАк проходит день</p>
+          <div class="scale">
+            <div class="time">
+              15:00
+            </div>
+            <div class="switch">
+              <div class="point"></div>
+            </div>
+          </div>
+        </div>
+        <div class="nots">
+          <p>Время готовиться ко сну</p>
+          <div class="scale">
+            <div class="time">
+              21:00
+            </div>
+            <div class="switch">
+              <div class="point"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="buttons">
+    <button id="go_next" class="g"  type="button" name="button"></button>
+    <button id="skip" class="skip" type="button" name="button"></button>
+
+    <%= link_to "", privacy_relative_path, :class => "link_p" %>
+  </div>
+</section>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(".check_box").click(function(){
+      $(this).toggleClass("selected");
+    });
+
+    $("#go_next").click(function(){
+      $(this).addClass("go");
+      $("#skip").addClass("skipit");
+      $(".part_2").addClass("hide");
+      $(".part_3").removeClass("hide");
+
+      $(".go").click(function(){
+        $(this).addClass("go_on");
+        $("#skip").addClass("skipitnext");
+        $(".part_3").addClass("hide");
+        $(".part_4").removeClass("hide");
+
+        $(".go_on").click(function(){
+          $(this).addClass("go_final");
+          $(".skipitnext").addClass("skip_final");
+          $(".part_4").addClass("hide");
+          $(".part_5").removeClass("hide");
+
+          $(".go_final").click(function(){
+            $(".link_p").get(0).click();
+          });
+        })
+      });
+    });
+
+    $("#skip").click(function(){
+      $(this).addClass("skipit");
+      $("#go_next").addClass("go");
+      $(".part_2").addClass("hide");
+      $(".part_3").removeClass("hide");
+
+      $(".skipit").click(function(){
+        $(this).addClass("skipitnext");
+        $("#go").addClass("go_on");
+        $(".part_3").addClass("hide");
+        $(".part_4").removeClass("hide");
+
+        $(".skipitnext").click(function(){
+          $(this).addClass("skip_final");
+          $(".go_on").addClass("go_final");
+          $(".part_3").addClass("hide");
+          $(".part_4").addClass("hide");
+          $(".part_5").removeClass("hide");
+
+          $(".skip_final").click(function(){
+            $(".link_p").get(0).click();
+          });
+        })
+      });
+    });
+
+    $(".switch").click(function(){
+      $(this).toggleClass("on");
+    })
+
+// draggable function
+    function handle_mousedown(e){
+
+        window.my_dragging = {};
+        my_dragging.pageX0 = e.pageX;
+        my_dragging.elem = this;
+        my_dragging.offset0 = $(this).offset();
+
+        function handle_dragging(e){
+            let left = my_dragging.offset0.left + (e.pageX - my_dragging.pageX0);
+            let right = my_dragging.offset0.right + (e.pageX - my_dragging.pageX0);
+            $(my_dragging.elem)
+            .offset({right: right, left: left});
+        }
+
+        function handle_mouseup(e){
+            $('body')
+            .off('mousemove', handle_dragging)
+            .off('mouseup', handle_mouseup);
+        }
+
+        $('body')
+        .on('mouseup', handle_mouseup)
+        .on('mousemove', handle_dragging);
+    }
+
+    $('.draggable').mousedown(handle_mousedown);
+  });
+</script>

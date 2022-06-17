@@ -1,0 +1,109 @@
+// Place all the styles related to the Main_user controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+$H2: 4.673vw;
+$descr: 2.804vw;
+$in: #2C2C2C;
+$yan: #fff;
+$transmission: #898989;
+$fieldwidth: 80.374vw;
+$fieldheight: 11.215vw;
+$fieldfontsize: 3.738vw;
+$zen: #33FF00;
+
+.user_main{
+  width: 100vw;
+  height: 100%;
+  position: relative;
+  .info{
+    width: 88.374vw;
+    margin-left: 5.140vw;
+    margin-top: 14.019vw;
+    .head{
+      display: flex;
+      justify-content: space-between;
+      .daycount{
+        width: 22.430vw;
+        height: 11.215vw;
+        border: 1px solid $in;
+        border-radius: 8.411vw;
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+        color: #2C2C2C;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .calendar{
+      h1{
+        font-family: 'Inter',sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 39px;
+        color: $in;
+        margin-bottom: 2.336vw;
+      }
+      h3{
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        color: $transmission;
+        margin: 0;
+      }
+    }
+    .content{
+      h2{
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        font-size: $H2;
+        line-height: 130%;
+        color: $in;
+        margin-right: 2.570vw;
+        margin-bottom: 3.505vw;
+      }
+      h4{
+        margin-top: 8vw;
+        width: 80vw;
+        text-align: center;
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        color: $transmission;
+      }
+    }
+  }
+}
+.homebar{
+  height: 24.615vw;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  .icons{
+    margin-top: 2.564vw;
+    width: 81.282vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .add{
+      width: 12.308vw;
+      height: 12.308vw;
+      background: $zen;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .home, .notes, .ads, .history{
+      margin-top: 4vw;
+    }
+  }
+}

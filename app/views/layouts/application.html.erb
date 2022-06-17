@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Zen</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("#toquestions").click(function(){
+        $(".app").removeClass("zen");
+        $(".app").addClass("go_on");
+        $(this).removeClass("next");
+        $(this).addClass("lets_go");
+        $("#toquestions").click(function(){
+          $(".greeting").removeClass("greeting");
+          $(".questions").css('opacity' , '1')
+          $(this).removeClass("lets_go");
+          $(this).addClass("saveme");
+        });
+      });
+
+      $(".profile").click(function(){
+        $(".account").addClass('visible')
+
+        $(".key").click(function(){
+          $(".acses").css('display', 'block')
+          $(".content").css('display', 'none')
+
+          $(".back, .aw, .btns").click(function(){
+            $(".content").css('display', 'block')
+            $(".acses").css('display', 'none')
+          })
+
+          $(".exit").click(function(){
+            $(".content").css('display', 'block')
+            $(".acses").css('display', 'none')
+            $(".account").removeClass('visible')
+          })
+        })
+
+        $(".nots").click(function(){
+          $(".nft").css('display', 'block')
+          $(".content").css('display', 'none')
+
+          $(".switch").click(function(){
+            $(this).toggleClass("on");
+          })
+
+          $(".back, .sv").click(function(){
+            $(".content").css('display', 'block')
+            $(".nft").css('display', 'none')
+          })
+
+          $(".exit").click(function(){
+            $(".content").css('display', 'block')
+            $(".nft").css('display', 'none')
+            $(".account").removeClass('visible')
+          })
+        })
+
+        $(".pr").click(function(){
+          $(".prvc").css('display', 'block')
+          $(".content").css('display', 'none')
+
+          $(".back, .safe").click(function(){
+            $(".content").css('display', 'block')
+            $(".prvc").css('display', 'none')
+          })
+
+          $(".exit").click(function(){
+            $(".content").css('display', 'block')
+            $(".prvc").css('display', 'none')
+            $(".account").removeClass('visible')
+          })
+        })
+
+      })
+      $(".exit").click(function(){
+        $(".account").removeClass('visible')
+      })
+      $(".add").click(function(){
+        $(".adding").addClass('visible')
+      })
+      $(".exit").click(function(){
+        $(".adding").removeClass('visible')
+      })
+
+      $(".fuckit").click(function(){
+        $(".content").css('display', 'none')
+        $(".thoughts").css('display', 'block')
+
+        $(".back").click(function(){
+          $(".content").css('display', 'block')
+          $(".thoughts").css('display', 'none')
+        })
+        $(".exit_s").click(function(){
+          $(".adding").removeClass('visible')
+          $(".content").css('display', 'block')
+          $(".thoughts").css('display', 'none')
+        });
+
+        $(".fuckfuck").click(function(){
+          $(".thoughts").css('display', 'none');
+          $(".done_th").css('display', 'flex')
+
+          $(".shit button").click(function(){
+            $(".adding").removeClass('visible')
+            $(".done_th").css('display', 'none')
+            $(".content").css('display', 'block')
+          });
+        });
+      });
+
+      $(".fuckthat").click(function(){
+        $(".content").css('display', 'none')
+        $(".mood").css('display', 'block')
+
+        $(".back").click(function(){
+          $(".content").css('display', 'block')
+          $(".mood").css('display', 'none')
+        })
+        $(".exit_s").click(function(){
+          $(".adding").removeClass('visible')
+          $(".content").css('display', 'block')
+          $(".mood").css('display', 'none')
+        });
+
+        $(".fuckfuckfuck").click(function(){
+          $(".mood").css('display', 'none');
+          $(".done_mood").css('display', 'flex')
+
+          $(".shit button").click(function(){
+            $(".adding").removeClass('visible')
+            $(".done_mood").css('display', 'none')
+            $(".content").css('display', 'block')
+
+          });
+        });
+      });
+
+    });
+
+
+  </script>
+</html>

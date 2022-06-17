@@ -1,0 +1,20 @@
+<section class="privacy">
+  <div class="content">
+    <div class="logo">
+      <%= image_tag "zenlogoinactive.svg" %>
+    </div>
+    <h2>Мы заботимся о твоих чувствах и безопасности</h2>
+    <p>Мы используем твои данные только для аналитики и с целью улучшить твое самочуствие. Кроме тебя никто не имеет к ним доступа.</p>
+  </div>
+  <button class="safe" type="button" name="button">Спасибо!</button>
+  <%= link_to "", main_relative_path, :class => "main" %>
+</section>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+
+    $(".safe").click(function(){
+      $(".main").get(0).click();
+    });
+  });
+</script>

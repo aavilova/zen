@@ -1,0 +1,44 @@
+<section id="onboarding">
+  <div class="onboarding">
+
+    <div class="greeting">
+      <div class="logo"></div>
+      <div class="app zen"></div>
+    </div>
+
+    <div class="questions">
+      <div class="frst">
+        <h2>1/5</h2>
+        <h2>Для кого ты <br>используешь zen?</h2>
+      </div>
+      <p>zen может помочь тебе, если ты хочешь быть внимательнее к своим чувствам или чувствам близкого человека</p>
+      <div class="checkboxes">
+        <div class="check_box">
+          <p>Я забочусь о себе</p>
+        </div>
+        <div class="check_box">
+          <p>Я забочусь о близком человеке</p>
+        </div>
+      </div>
+    </div>
+    <button id="toquestions" class="next" type="button" name="button"></button>
+    <%= link_to "", patient_path, :class => "link1" %>
+    <%= link_to "", relative_path, :class => "link2" %>
+    <a class="link2" href="https://stackoverflow.com"></a>
+  </div>
+</section>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(".check_box").click(function(){
+      $(this).toggleClass("selected");
+    });
+
+    $("#toquestions").click(function(){
+      if ($(".check_box:nth-of-type(1)").hasClass("selected")){
+        $(".link1").get(0).click();
+      } else if ($(".check_box:nth-of-type(2)").hasClass("selected")){
+        $(".link2").get(0).click();
+      }
+    });
+  });
+</script>

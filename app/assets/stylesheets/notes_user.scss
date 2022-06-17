@@ -1,0 +1,74 @@
+// Place all the styles related to the Notes_user controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+$H2: 4.673vw;
+$descr: 2.804vw;
+$in: #2C2C2C;
+$yan: #fff;
+$transmission: #898989;
+$fieldwidth: 80.374vw;
+$fieldheight: 11.215vw;
+$fieldfontsize: 3.738vw;
+$zen: #33FF00;
+
+.notes_s{
+  width: 100vw;
+  height: 100%;
+  position: relative;
+  .inside{
+    width: 88.374vw;
+    margin-left: 5.140vw;
+    margin-top: 14.019vw;
+    .head{
+      display: flex;
+      justify-content: space-between;
+      .switch{
+        width: 66.667vw;
+        height: 11.215vw;
+        border: 1px solid $in;
+        border-radius: 8.411vw;
+        .toggle{
+          position: absolute;
+          width: 28.718vw;
+          height: 11.215vw;
+          z-index: 1;
+          border-radius: 8.411vw;
+          background: $zen;
+          transition: .3s;
+        }
+        .left{
+          width: 38.974vw;
+          left: 33vw;
+          transition: .3s;
+        }
+        .filter{
+          display: flex;
+          position: relative;
+          z-index: 10;
+          p{
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 19px;
+            color: #2C2C2C;
+            margin: 3.2vw 7.692vw;
+          }
+        }
+      }
+    }
+    .allnotes{
+      .empty{
+        margin-top: 8vw;
+        width: 80vw;
+        text-align: center;
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        color: $transmission;
+      }
+    }
+  }
+}

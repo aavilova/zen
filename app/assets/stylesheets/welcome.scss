@@ -1,0 +1,173 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+@media screen and (max-width: 428px) {
+$H2: 4.673vw;
+$descr: 2.804vw;
+$in: #2C2C2C;
+$yan: #fff;
+$transmission: #898989;
+$fieldwidth: 80.374vw;
+$fieldheight: 11.215vw;
+$fieldfontsize: 3.738vw;
+  #onboarding{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    .next:after{
+      content: "Поехали";
+    }
+    .lets_go:after{
+      content: "Я готов";
+    }
+    .saveme:after{
+      content: "Дальше";
+    }
+    button{
+      cursor: pointer;
+      font-weight: 600;
+      font-size: $fieldfontsize;
+      color: $in;
+      width: $fieldwidth;
+      height: $fieldheight;
+      background: #FFFFFF;
+      border: 1px solid #2C2C2C;
+      border-radius: 8.411vw;
+      position: absolute;
+      bottom: 13.084vw;
+      left: 10.5vw;
+      opacity: 0;
+      animation: appear 1s ;
+      animation-delay: .6s;
+      animation-fill-mode: forwards;
+      font-family: 'Inter', sans-serif;
+      padding: auto;
+      font-weight: 600;
+      font-size: 16px;
+      text-align: center;
+    }
+    .onboarding{
+      .greeting{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: change 1s ;
+        animation-delay: .6s;
+        animation-fill-mode: forwards;
+        .logo{
+          opacity: 1;
+          margin: 0 0 1.168vw 0;
+          width: 23.364vw;
+          height: 23.364vw;
+          background: {
+            image: url("zenlogoactive.svg")
+          }
+          background-position: center;
+          background-size: 100%;
+          animation: fade 1s ;
+          animation-delay: .6s;
+          animation-fill-mode: forwards;
+        }
+        .zen{
+          width: auto;
+          text-align: center;
+        }
+        .zen:before{
+          content: '';
+          font-family: 'Inter', sans-serif;
+          font-weight: 600;
+          font-size: 7.477vw;
+          line-height: 130%;
+          color: $in;
+          text-align: center;
+          transition: .8s;
+          animation: attent 1s ;
+          animation-delay: .8s;
+          animation-fill-mode: forwards;
+        }
+        .go_on{
+          width: auto;
+          text-align: center;
+        }
+        .go_on:after{
+          content: 'Путь к обретению дзена начинается!';
+          font-family: 'Inter', sans-serif;
+          font-weight: 600;
+          font-size: 7.477vw;
+          line-height: 130%;
+          color: $in;
+          text-align: center;
+          transition: .8s;
+          animation: attent 1s ;
+          animation-delay: .8s;
+          animation-fill-mode: forwards;
+        }
+      }
+    }
+    .questions{
+      opacity: 0;
+      width: 80.374vw;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 10.514vw;
+      left: 10.5vw;
+      .frst{
+        display: flex;
+        h2{
+          font-family: 'Inter', sans-serif;
+          font-weight: 600;
+          font-size: $H2;
+          line-height: 130%;
+          color: $in;
+          margin-right: 2.570vw;
+          margin-bottom: 3.505vw;
+        }
+      }
+      p{
+        margin-top: 0;
+        margin-left: 9.579vw;
+        font-family: 'Inter', sans-serif;
+        font-size: $descr;
+        line-height: 150%;
+        width: 65.421vw;
+        color: $transmission;
+        margin-bottom: 8.178vw;
+      }
+      .checkboxes{
+        .check_box{
+          width: $fieldwidth;
+          height: $fieldheight;
+          background: {
+            image: url("checkfield.svg");
+          }
+          background-size: 100%;
+          background-position: center;
+          margin-bottom: 2.336vw;
+          p{
+            padding: 3.3vw 5vw;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 130%;
+            color: $in;
+          }
+        }
+        .selected{
+          background: {
+            image: url("checkfield_selected.svg");
+          }
+          background-size: 100%;
+          background-position: center;
+          p{
+            color: $yan;
+          }
+        }
+      }
+    }
+  }
+}
